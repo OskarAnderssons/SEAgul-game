@@ -251,8 +251,8 @@ function releaseGlider() {
   fill(0, 153, 153);
 
   // Keep the boat stationary once it's in position
-  image(boat, boatX, boatY, 1000, 600);  // Draw the boat in the same place
   image(man, boatX + 300, boatY + 120, 100, 200);  // Draw man on the boat
+  image(boat, boatX, boatY, 1000, 600);  // Draw the boat in the same place
   
   // Check if the glider is still above the sinking point
   if (gliderY < height / 2 + 300 - gliderHeight / 2) {
@@ -262,7 +262,7 @@ function releaseGlider() {
   }
 
   // Display the glider moving downwards
-  image(glider, gliderX, gliderY, gliderWidth, gliderHeight);
+  image(glider, boatX + 400, gliderY, gliderWidth, gliderHeight);
 }
 
 function playGame() {
