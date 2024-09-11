@@ -245,19 +245,24 @@ function waitForStart() {
 }
 
 function releaseGlider() {
-    background(0, 102, 204);
-    fill(135, 206, 250);
-    rect(0, 0, width, height / 2);
-    fill(0, 153, 153);
-    if (gliderY < height / 2 + 300 - gliderHeight / 2) {
-        cameraY += 5;
-    } else {
-        gameState = "PLAY";
-    }
-    image(man, boatX + 300, boatY + 120 - cameraY, 100, 200);
-    image(boat, boatX, boatY - cameraY, 1000, 600);
-    gliderY += 5;
-    image(glider, boatX + 400, gliderY - cameraY, gliderWidth, gliderHeight);
+  background(0, 102, 204);
+  fill(135, 206, 250);
+  rect(0, 0, width, height / 2);  // Draw the sky
+  fill(0, 153, 153);
+
+  // Keep the boat stationary once it's in position
+  image(boat, boatX, boatY, 1000, 600);  // Draw the boat in the same place
+  image(man, boatX + 300, boatY + 120, 100, 200);  // Draw man on the boat
+  
+  // Check if the glider is still above the sinking point
+  if (gliderY < height / 2 + 300 - gliderHeight / 2) {
+    gliderY += 5;  // Move the glider downwards during release
+  } else {
+    gameState = "PLAY";  // Transition to play state when the glider is fully released
+  }
+
+  // Display the glider moving downwards
+  image(glider, gliderX, gliderY, gliderWidth, gliderHeight);
 }
 
 function playGame() {
