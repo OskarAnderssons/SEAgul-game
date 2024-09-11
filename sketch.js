@@ -294,10 +294,39 @@ function playGame() {
         gliderY = height / 2 + 300 - gliderHeight / 2 - 280;
         firstPlayFrame = false;
     }
+    if (keyIsDown(87)) {  // 'W' or 'w' for moving up
+      gliderSpeedY = -lift;
+    } else if (keyIsDown(83)) {  // 'S' or 's' for moving down
+      gliderSpeedY = lift;
+    } else {
+      gliderSpeedY = 0;  // Stop vertical movement if no keys are pressed
+    }
+  
+    if (keyIsDown(65)) {  // 'A' or 'a' for moving left
+      gliderSpeedX = -lift;
+    } else if (keyIsDown(68)) {  // 'D' or 'd' for moving right
+      gliderSpeedX = lift;
+    } else {
+      gliderSpeedX = 0;  // Stop horizontal movement if no keys are pressed
+    }
+  
+    // Update glider position based on the calculated speed
+    gliderY += gliderSpeedY;
+    gliderX += gliderSpeedX;
+  
+    // Constrain the glider within the screen
+    gliderY = constrain(gliderY, 0, height - gliderHeight);
+    gliderX = constrain(gliderX, 0, width - gliderWidth);
+  
+    // Ensure the glider rotates based on its vertical movement
+    angle = map(gliderSpeedY, -lift, lift, -PI / 6, PI / 6);
+    
+    // Render the glider with the correct rotation
     push();
-    translate(gliderX + gliderWidth / 2, gliderY + gliderHeight / 2);
-    imageMode(CENTER);
-    image(glider, 0, 0, gliderWidth, gliderHeight);
+    translate(gliderX + gliderWidth / 2, gliderY + gliderHeight / 2);  // Translate to glider's center
+    rotate(angle);  // Rotate based on the calculated angle
+    imageMode(CENTER);  // Set image mode to center for proper rotation
+    image(glider, 0, 0, gliderWidth, gliderHeight);  // Render the glider
     pop();
 }
 
