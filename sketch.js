@@ -309,7 +309,7 @@ function gameOverScreen() {
 }
 
 function keyPressed() {
-    if (gameState === "WAIT" && key === 'S') {
+    if (gameState === "WAIT" && (key === 's' || key === 'S')) {
         gameState = "RELEASE";
     }
     if (gameState === "PLAY") {
