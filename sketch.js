@@ -39,6 +39,7 @@ function preload() {
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Setup game environment
+
 function setup() {
     let canvas = createCanvas(screenWidth, screenHeight);
     canvas.parent('game-container');
@@ -74,6 +75,12 @@ function draw() {
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Game state functions
+function startGame() {
+  document.getElementById('start-menu').style.display = 'none';
+  gameState = "START";
+  loop();  // Start the game loop
+}
+
 function startScreen() {
     background(0, 102, 204);
     fill(135, 206, 250);
