@@ -64,9 +64,10 @@
     }
 
     function startGame() {
-      document.getElementById('start-menu').style.display = 'none';  // Hide start menu
-      gameState = "PLAY";  // Update game state
-      loop();  // Start the game loop
+        console.log("Start Game Clicked");  // Check if this gets printed
+        document.getElementById('start-menu').style.display = 'none';  // Hide start menu
+        gameState = "PLAY";  // Change game state to PLAY
+        loop();  // Start the game loop
     }
   </script>
 </body>
