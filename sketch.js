@@ -15,15 +15,15 @@ let deathSoundPlayed = false, hitSoundPlayed = false;
 
 function preload() {
     // Load images and sounds
-    glider = loadImage('glider.png');
-    boat = loadImage('boat.png');
-    man = loadImage('man.png');
-    crashSound = loadSound('crashSound.mp3');
-    manSound = loadSound('manSound.mp3');
-    popSound = loadSound('popSound.mp3');
-    waterPelletSound = loadSound('shot.mp3');
-    redPelletSound = loadSound('squish.mp3');
-    hitSound = loadSound('hit.mp3');
+    glider = loadImage('assets/glider.png');
+    boat = loadImage('assets/boat.png');
+    man = loadImage('assets/man.png');
+    crashSound = loadSound('assets/crashSound.mp3');
+    manSound = loadSound('assets/manSound.mp3');
+    popSound = loadSound('assets/popSound.mp3');
+    waterPelletSound = loadSound('assets/shot.mp3');
+    redPelletSound = loadSound('assets/squish.mp3');
+    hitSound = loadSound('assets/hit.mp3');
 }
 
 function setup() {
