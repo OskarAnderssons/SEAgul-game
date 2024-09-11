@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+      "target": "ES6",         // Target ES6 (or any JavaScript version you're using)
+      "checkJs": false,        // Disable TypeScript-style checking for JavaScript
+      "allowSyntheticDefaultImports": true  // Allows default imports, useful for some libraries
+    },
+    "exclude": [
+      "node_modules",          // Exclude node_modules to avoid unnecessary checks
+      "**/node_modules/*"
+    ]
+  }
+  
