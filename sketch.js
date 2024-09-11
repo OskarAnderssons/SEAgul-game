@@ -14,13 +14,6 @@ let crashSound, manSound, popSound, waterPelletSound, redPelletSound, hitSound;
 let deathSoundPlayed = false, hitSoundPlayed = false;
 
 
-function startGame() {
-  console.log("Start Game Clicked");
-  document.getElementById('start-menu').style.display = 'none';  // Hide the start menu
-  gameState = "PLAY";  // Update game state
-  loop();  // Start the p5.js draw loop
-}
-
 function preload() {
     // Load images and sounds
     glider = loadImage('assets/glider.png');
@@ -61,6 +54,13 @@ function draw() {
     } else if (gameState === "GAMEOVER") {
         gameOverScreen();
     }
+}
+
+function startGame() {
+  console.log("Start Game Clicked");
+  document.getElementById('start-menu').style.display = 'none';  // Hide the start menu
+  gameState = "PLAY";  // Update game state
+  loop();  // Start the p5.js draw loop
 }
 
 class Bubble {
