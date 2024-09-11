@@ -59,7 +59,7 @@ function draw() {
 function startGame() {
   console.log("Start Game Clicked");
   document.getElementById('start-menu').style.display = 'none';  // Hide the start menu
-  gameState = "PLAY";  // Update game state
+  gameState = "START";  // Update game state
   loop();  // Start the p5.js draw loop
 }
 
