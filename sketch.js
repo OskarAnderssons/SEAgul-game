@@ -207,9 +207,9 @@ function keyPressed() {
 
 function keyReleased() {
     if (gameState === "PLAY") {
-        if (key === 'w' || key === 'W' || key === 's' || key === 'S')) {
+        if (key === 'w' || key === 'W' || key === 's' || key === 'S') {
             gliderSpeedY = 0;
-        } else if (key === 'a' || key === 'A' || key === 'd' || key === 'D')) {
+        } else if (key === 'a' || key === 'A' || key === 'd' || key === 'D') {
             gliderSpeedX = 0;
         }
     }
